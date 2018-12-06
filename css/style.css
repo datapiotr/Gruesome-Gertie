@@ -1,0 +1,640 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #ddd;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #1B1B1B;
+    overflow-x: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* HEADER */
+
+header {
+    background-image: url("../img/bcg image.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+div.name {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+}
+
+.name h1 {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    border: 1.5px solid black;
+    cursor: default;
+}
+
+
+header button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    animation: arrow 2.5s infinite;
+    opacity: 1;
+    cursor: pointer;
+}
+
+header button a {
+    color: #ccc;
+}
+
+@keyframes arrow {
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/* LANDSCAPE & PORTRAIT NAVIGATION*/
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.landscape {
+    margin-top: 20px;
+}
+
+
+.landscape ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.landscape ul li {
+    float: left;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+}
+
+.landscape ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    transition: 0.6s;
+}
+
+.navBar {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    transform: translateX(-100%);
+    height: 58.4px;
+    width: 100%;
+    background-color: #ddd;
+    transition: 1s;
+    z-index: 1;
+}
+
+.navBar.active {
+    transform: translateX(0%);
+}
+
+ul li a:hover {
+    color: #48859D;
+}
+
+.burger {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 50px;
+    color: #ddd;
+    transition: .3s linear;
+    z-index: 3;
+}
+
+.fa-bars,
+.fa-times {
+    display: none;
+}
+
+.fa-bars.show,
+.fa-times.show {
+    display: block;
+}
+
+.portrait ul {
+    height: 100vh;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.portrait {
+    opacity: 0;
+    transition: .2s linear;
+    z-index: -1;
+}
+
+.portrait.show {
+    opacity: 1;
+    z-index: 2;
+}
+
+.portrait ul li {
+    text-align: center;
+    padding: 10px;
+    transform: translateY(calc(50vh - 250%));
+}
+
+.portrait ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ddd;
+    transition: 0.6s;
+}
+
+/*SCROLL-TOP BUTTON*/
+
+.scrollTopButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+    transform: translateY(300%);
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.5);
+    cursor: pointer;
+    transition: 1s;
+    z-index: 1;
+}
+
+.scrollTopButton i {
+    width: 100%;
+    line-height: 40px;
+    font-size: 25px;
+}
+
+.scrollTopButton a {
+    color: #ddd;
+}
+
+.scrollTopButton.active {
+    transform: translateY(0%);
+}
+
+/*SECTIONS*/
+
+.wrapper {
+    max-width: 70vw;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+section {
+    margin-top: 150px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+/*ABOUT*/
+
+article {
+    margin: 50px auto;
+}
+
+.about p {
+    text-align: justify;
+}
+
+.about img {
+    margin-top: 100px;
+    width: 100%;
+    z-index: 0;
+}
+
+/*GIGS*/
+
+div.table {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
+
+div.row {
+    flex-basis: 15vh;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.5px solid #ddd;
+    overflow: hidden;
+}
+
+div.row:nth-last-child(1) {
+    border-bottom: 0.5px solid #ddd;
+}
+
+div.event {
+    display: flex;
+}
+
+.row p {
+    line-height: 15vh;
+    font-size: 20px;
+}
+
+.date {
+    margin-right: 20px;
+}
+
+.more a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+.more span {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow: hidden;
+    transition: .15s .15s;
+    cursor: pointer;
+}
+
+.more span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #ddd;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 102%;
+    transition: left 0.2s, height 0.1s 0.2s;
+    z-index: -1;
+}
+
+.more span:hover::before {
+    left: 0;
+    height: 102%;
+}
+
+.more span:hover {
+    color: black;
+}
+
+/*MUSIC*/
+
+h3 {
+    margin: 50px auto;
+}
+
+iframe {
+    width: 100%;
+}
+
+/*GALLERY*/
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 50px auto;
+}
+
+.photos img {
+    display: block;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.photos a {
+    flex-basis: 23%;
+    margin: 10px 0;
+}
+
+.photos img:hover {
+    transform: scale(1.1);
+}
+
+/*CONTACT*/
+
+.contact {
+    max-width: 70vw;
+    margin: 150px auto 50px;
+}
+
+.contact img {
+    width: 40%;
+    margin: 20px;
+}
+
+.contact h2 {
+    margin: 50px;
+}
+
+.icons ul {
+    list-style: none;
+    font-size: 70px;
+    height: 100%;
+}
+
+.icons ul li {
+    float: left;
+    width: 33.33%;
+    transition: .7s;
+}
+
+.icons ul li a {
+    color: #ddd;
+}
+
+.icons {
+    transform: translateX(100vw);
+    transition: 1s;
+}
+
+.icons.active {
+    transform: translateX(0);
+}
+
+.fab {
+    transition: .5s;
+}
+
+.fab:hover {
+    transform: scale(0.9);
+}
+
+/*FOOTER*/
+
+footer {
+    height: 8vh;
+    background-color: #000;
+    text-align: center;
+}
+
+footer p {
+    line-height: 8vh;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media (orientation: landscape) {
+    .burger {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+    .row p {
+        font-size: 18px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 854px) {
+    .row p {
+        font-size: 16px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 823px) {
+    .burger {
+        display: block;
+    }
+
+    .landscape {
+        display: none;
+    }
+
+    .navBar.active {
+        transform: translateX(-100%);
+    }
+
+    div.name {
+        top: 20%;
+    }
+
+    .icons ul {
+        font-size: 50px;
+    }
+
+    div.event {
+        display: block;
+    }
+
+    div.row {
+        flex-basis: 30vh;
+    }
+
+    .date {
+        text-align: left;
+    }
+
+    .row .more {
+        line-height: 30vh;
+    }
+
+    .photos a {
+        flex-basis: 47%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 736px) {
+    .name h1 {
+        font-size: 25px;
+    }
+}
+
+
+@media (orientation: landscape) and (max-width: 667px) {
+    .row p {
+        font-size: 14px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 568px) {
+    .row p {
+        font-size: 12px;
+    }
+}
+
+@media (orientation: portrait) {
+    .landscape {
+        display: none;
+    }
+
+    .navBar.active {
+        transform: translateX(-100%);
+    }
+
+    header {
+        background-image: url("../img/bcg\ image2.JPG");
+    }
+
+    div.name {
+        background-color: rgb(0, 0, 0, 0.5);
+        width: 100%;
+        color: #ddd;
+    }
+
+    .name h1 {
+        padding: 10px;
+        border: none;
+    }
+
+    .name p {
+        padding-bottom: 10px;
+    }
+
+}
+
+@media (orientation: portrait) and (max-width: 1024px) {
+    .wrapper {
+        max-width: 80vw;
+    }
+
+    .photos a {
+        flex-basis: 30%;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+    .burger {
+        top: 20px;
+        right: 20px;
+    }
+
+    .scrollTopButton {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    div.event {
+        display: block;
+    }
+
+    div.row {
+        flex-basis: 15vh;
+    }
+
+    .row p {
+        line-height: 7.5vh;
+        font-size: 15px;
+    }
+
+    .date {
+        text-align: left;
+    }
+
+    .row .more {
+        line-height: 15vh;
+    }
+
+    .photos a {
+        flex-basis: 47%;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 720px) {
+    .row p {
+        font-size: 13px;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 414px) {
+    .burger {
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+    }
+
+    .scrollTopButton {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .row p {
+        font-size: 11px;
+    }
+
+    .photos a {
+        flex-basis: 90%;
+    }
+
+    .icons ul {
+        font-size: 35px;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 375px) {
+    .row p {
+        font-size: 10px;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 360px) {
+    .burger {
+        top: 10px;
+        right: 10px;
+    }
+
+    .scrollTopButton {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .row p {
+        font-size: 9px;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 320px) {
+    .burger {
+        top: 8px;
+        right: 8px;
+    }
+
+    .scrollTopButton {
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .row p {
+        font-size: 8px;
+    }
+}
